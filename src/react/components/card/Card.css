@@ -8,8 +8,16 @@
   border-radius: 3px;
   padding: 1rem;
   margin: 1rem;
-  width: 20rem;
+  flex: 0 0 auto;
   transition: all .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card:first-child {
+  margin-left: 0;
 }
 
 .card:hover {
@@ -18,4 +26,5 @@
 
 .card img {
   width: 100%;
+  margin-bottom: 2rem;
 }

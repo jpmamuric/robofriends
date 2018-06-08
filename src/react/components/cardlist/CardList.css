@@ -1,4 +1,6 @@
 .robot__list {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  height: 50rem;
 }

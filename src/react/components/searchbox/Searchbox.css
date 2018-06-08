@@ -1,0 +1,12 @@
+.searchbox-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.searchbox {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+  font-size: 2rem;
+  outline: none;
+}
