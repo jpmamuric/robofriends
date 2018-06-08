@@ -1,0 +1,8 @@
+.robot__heading {
+  text-align: center;
+  background-image: linear-gradient( rgb(201, 167, 63),
+    rgb(207, 82, 82));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 5rem;
+}
