@@ -1,30 +1,33 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
 
 import './CardList.css';
 import Card from '../card/Card';
+import { getRobots } from '../../../redux/actions/action-robots';
 
 class CardList extends Component  {
-  state = {
-    robots: null
-  };
-
-  async componentDidMount(){
-    const res = await axios.get('https://jsonplaceholder.typicode.com/users');
-    this.setState({ robots: res.data });
+  componentDidMount(){
+    this.props.getRobots()
   }
 
   render(){
-    if (!this.state.robots) {
+    const { list } = this.props;
+    // if(true) {
+    //     throw new Error('Card list could not render');
+    // }
+
+    if (list.length === 0) {
       return <div> Loading... </div>
     }
 
     return (
       <ul className="robot__list">
-        { this.state.robots.map(robot => <Card key={robot.id} robot={robot}/> ) }
+        { list.map(robot => <Card key={robot.id} robot={robot}/> ) }
       </ul>
     );
   }
 }
 
-export default CardList;
+const mapStateToProps = ({ robots: { list }}) => ({ list });
+
+export default connect(mapStateToProps, {getRobots})(CardList);
