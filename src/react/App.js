@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
 
+import Home from './components/pages/Home';
+import Header from './components/header/Header';
+// import LazyLoad from './containers/LazyLoad';
+import LazyLoad2 from './containers/LazyLoad2';
 
-import CardList from './components/cardlist/CardList';
-import ErrorBoundry from './components/error-boundry/ErrorBoundry';
-import Scroll from './components/scroll/Scroll';
-import Searchbox from './components/searchbox/Searchbox';
-import './App.css';
+const LazyLoadAbout = LazyLoad2(()=>{
+  return import('./components/pages/About');
+});
 
 //does not need to be a class.
 class App extends Component {
   render() {
     return (
-      <div className="app__wrapper">
-        <h1 className="app__heading">Robofriends</h1>
-        <Searchbox />
-        <Scroll>
-          <ErrorBoundry>
-            <CardList />
-          </ErrorBoundry>
-        </Scroll>
+      <div>
+        <Header />
+        <Route path="/" exact component={Home} />
+        <Route exact path='/about' component={LazyLoadAbout} />
       </div>
     );
   }
