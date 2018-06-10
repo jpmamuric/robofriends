@@ -2,6 +2,7 @@ import * as types from '../actions/types';
 
 const initialState = {
   list: [],
+  filteredList: [],
   err: ''
 };
 
@@ -16,6 +17,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         err: action.payload
+      };
+    case types.FILTER_ROBOTS:
+      return {
+        ...state,
+        filteredList: action.payload
       };
     default:
       return state;

@@ -7,11 +7,11 @@ import { getRobots } from '../../../redux/actions/action-robots';
 
 class CardList extends Component  {
   componentDidMount(){
-    this.props.getRobots()
+    this.props.getRobots();
   }
 
   render(){
-    const { list } = this.props;
+    const { list, filteredList } = this.props;
     // if(true) {
     //     throw new Error('Card list could not render');
     // }
@@ -20,14 +20,20 @@ class CardList extends Component  {
       return <div> Loading... </div>
     }
 
+    let renderList = filteredList.map(robot => <Card key={robot.id} robot={robot}/> )
+
+    if(filteredList.length === 0) {
+      renderList = list.map(robot => <Card key={robot.id} robot={robot}/> )
+    }
+
     return (
       <ul className="robot__list">
-        { list.map(robot => <Card key={robot.id} robot={robot}/> ) }
+        { renderList }
       </ul>
     );
   }
 }
 
-const mapStateToProps = ({ robots: { list }}) => ({ list });
+const mapStateToProps = ({ robots: { list, filter, filteredList }}) => ({ list, filteredList });
 
 export default connect(mapStateToProps, {getRobots})(CardList);
