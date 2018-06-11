@@ -11,7 +11,6 @@ class CardList extends Component  {
   }
 
   render(){
-    console.log('CardList')
     const { list, filteredList } = this.props;
     // if(true) {
     //     throw new Error('Card list could not render');

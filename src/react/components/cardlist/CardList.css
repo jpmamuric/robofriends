@@ -4,3 +4,12 @@
   overflow-x: auto;
   height: 40rem;
 }
+
+@media only screen and (min-width: 56.25em ) {
+  .robot__list {
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow-x: visible;
+  }
+}
