@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Route path="/" exact component={Home} />
+        <Route path="/robofriends" exact component={Home} />
         <Route exact path='/about' component={LazyLoadAbout} />
       </div>
     );
