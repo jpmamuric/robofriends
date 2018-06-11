@@ -12,6 +12,11 @@ import App from './react/App';
 import registerServiceWorker from './registerServiceWorker';
 
 
+// if (process.env.NODE_ENV !== 'production') {
+//   const { whyDidYouUpdate } = require('why-did-you-update');
+//   whyDidYouUpdate(React);
+// }
+
 const store = createStore(
   reducers,
   composeWithDevTools(applyMiddleware(Thunk))
