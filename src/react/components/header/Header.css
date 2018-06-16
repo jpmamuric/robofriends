@@ -17,10 +17,10 @@
 .header__link,
 .header__link:link,
 .header__link:visited {
-  color: var(--color-primary-2);
+  color: #000;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-family: impact;
   letter-spacing: .2rem;
   padding: 1rem 2rem;

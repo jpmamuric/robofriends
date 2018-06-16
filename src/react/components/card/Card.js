@@ -4,11 +4,11 @@ import './Card.css';
 
 const Card = ({ robot: { id, name, email } }) => {
   return (
-    <div className='card'>
-      <img src={`https://robohash.org/${id}?200x200`} alt="robohash"/>
-      <h1>{name}</h1>
-      <p>{ email }</p>
-    </div>
+    <li className='card'>
+      <img src={`https://robohash.org/${id}?size=300x300`} alt="robohash"/>
+      <h1 className='card__name'>{name}</h1>
+      <p className='card__email'>{ email }</p>
+    </li>
   );
 }
 

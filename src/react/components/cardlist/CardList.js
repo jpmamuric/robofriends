@@ -12,9 +12,7 @@ class CardList extends Component  {
 
   render(){
     const { list, filteredList } = this.props;
-    // if(true) {
-    //     throw new Error('Card list could not render');
-    // }
+
 
     if (list.length === 0) {
       return <div> Loading... </div>
@@ -37,3 +35,8 @@ class CardList extends Component  {
 const mapStateToProps = ({ robots: { list, filter, filteredList }}) => ({ list, filteredList });
 
 export default connect(mapStateToProps, {getRobots})(CardList);
+
+
+// if(true) {
+//     throw new Error('Card list could not render');
+// }

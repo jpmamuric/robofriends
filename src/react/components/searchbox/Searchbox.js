@@ -7,7 +7,13 @@ import { changeSearchInput } from '../../../redux/actions/action-searchbox';
 const Searchbox = ({ value, list, changeSearchInput }) => {
   return (
     <div className='searchbox-wrapper'>
-      <input value={value} className='searchbox' type='text' placeholder='search' onChange={e=>changeSearchInput(e.target.value, list)}/>
+      <input
+        aria-label='search robots'
+        value={value}
+        className='searchbox'
+        type='text'
+        placeholder='search'
+        onChange={e=>changeSearchInput(e.target.value, list)}/>
     </div>
   )
 }
